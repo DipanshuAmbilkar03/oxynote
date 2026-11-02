@@ -100,13 +100,12 @@ func NewDemoDataSources(organizationID string) []*DataSource {
 			URL:         demo.URL,
 			Credentials: processor.NewCredentials([]byte(`{}`)),
 		}, organizationID),
-		// TODO: uncomment once the web app can show loki data sources.
-		// NewDataSource(CreateInput{
-		// 	Type:        TypeLoki,
-		// 	Name:        "Demo Logs",
-		// 	URL:         demo.URL,
-		// 	Credentials: processor.NewCredentials([]byte(`{}`)),
-		// }, organizationID),
+		NewDataSource(CreateInput{
+			Type:        TypeLoki,
+			Name:        "Demo Logs",
+			URL:         demo.URL,
+			Credentials: processor.NewCredentials([]byte(`{}`)),
+		}, organizationID),
 	}
 }
 
